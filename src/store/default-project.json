@@ -1,0 +1,66 @@
+{
+	"duration": 11.034467120181406,
+	"timelineLength": 11.034467120181406,
+	"clips": {
+		"0": {
+			"id": "0",
+			"track": "0",
+			"start": 0,
+			"duration": 5.517256235827665,
+			"enabled": true,
+			"offset": 0,
+			"sourceId": "[\"new-york-city-all-stars_drums-11_drums_loop_174.wav.wav\",973288,1530278953338]",
+			"name": "Drums",
+			"source": {
+				"duration": 5.517256235827665,
+				"fileName": "new-york-city-all-stars_drums-11_drums_loop_174.wav.wav"
+			}
+		},
+		"1": {
+			"id": "1",
+			"track": "1",
+			"start": 0,
+			"duration": 11.034467120181406,
+			"enabled": true,
+			"offset": 0,
+			"sourceId": "[\"new-york-city-all-stars_bass-13_bass_loop_174.wav.wav\",1946524,1530278972167]",
+			"name": "Bass",
+			"source": {
+				"duration": 11.034467120181406,
+				"fileName": "new-york-city-all-stars_bass-13_bass_loop_174.wav.wav"
+			}
+		},
+		"2": {
+			"id": "2",
+			"track": "2",
+			"start": 5.517233560090703,
+			"duration": 5.517233560090703,
+			"enabled": true,
+			"offset": 0,
+			"sourceId": "[\"new-york-city-all-stars_guitar-14_guitar_loop_174.wav.wav\",973284,1530278940177]",
+			"name": "Guitar",
+			"source": {
+				"duration": 5.517233560090703,
+				"fileName": "new-york-city-all-stars_guitar-14_guitar_loop_174.wav.wav"
+			}
+		}
+	},
+	"tracks": {
+		"0": {
+			"id": "0",
+			"order": 0,
+			"clips": ["0"]
+		},
+		"1": {
+			"id": "1",
+			"order": 1,
+			"clips": ["1"]
+		},
+		"2": {
+			"id": "2",
+			"order": 2,
+			"clips": ["2"]
+		}
+	},
+	"trackOrder": [0, 1, 2]
+}
