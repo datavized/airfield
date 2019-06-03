@@ -5,13 +5,6 @@ const TITLE = 'Airfield';
 const description = 'Interdimensional Audio Editor';
 const port = 4000;
 const themeColor = '#344955';
-const browsers = [
-	'>1%',
-	'last 4 versions',
-	'Firefox ESR',
-	'ie >= 12',
-	'not dead'
-];
 const DEBUG_SERVICE_WORKER = false;
 const DEBUG_PROMISES = false;
 process.traceDeprecation = true;
@@ -67,6 +60,7 @@ const banner = [
 	'@link ' + pkg.homepage,
 	'@license ' + pkg.license
 ].join('\n');
+const browsers = pkg.browserslist;
 
 const buildPath = path.resolve(__dirname, 'build', isStagingBuild ? 'staging' : 'public');
 
@@ -164,7 +158,6 @@ const cssLoaders = [
 				require('postcss-flexbugs-fixes'),
 				require('postcss-input-range'),
 				autoprefixer({
-					browsers,
 					grid: true,
 					flexbox: 'no-2009'
 				})

@@ -127,5 +127,12 @@
 		"unistore": "^3.4.1",
 		"vorbis.js": "^0.1.1",
 		"worker-loader": "^2.0.0"
-	}
+	},
+	"browserslist": [
+		">1%",
+		"last 4 versions",
+		"Firefox ESR",
+		"ie >= 12",
+		"not dead"
+	]
 }
