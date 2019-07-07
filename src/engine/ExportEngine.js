@@ -51,6 +51,7 @@ export default function ExportEngine(project, options = {}) {
 
 	let nextTaskId = 1;
 	let currentTaskId = 0;
+	let exporting = false;
 	let progress = 0;
 	let context = null;
 	let engine = null;
@@ -74,6 +75,7 @@ export default function ExportEngine(project, options = {}) {
 
 		const taskId = nextTaskId++;
 		currentTaskId = taskId;
+		exporting = true;
 		progress = 0;
 
 		log('save');
@@ -177,7 +179,7 @@ export default function ExportEngine(project, options = {}) {
 		log('complete');
 
 		// todo: allow specifying filename?
-		currentTaskId = 0;
+		exporting = false;
 		progress = 1;
 		this.emit('finish');
 
@@ -200,9 +202,10 @@ export default function ExportEngine(project, options = {}) {
 			encoder = null;
 		}
 
-		const taskId = currentTaskId;
+		const aborted = !!exporting;
 		currentTaskId = 0;
-		if (taskId) {
+		exporting = false;
+		if (aborted) {
 			log('abort');
 			this.emit('abort');
 		}
