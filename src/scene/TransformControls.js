@@ -231,7 +231,7 @@ function TransformControlsGizmo() {
 		const gizmo = new Object3D();
 
 		for (const name in gizmoMap) {
-			if (gizmoMap.hasOwnProperty(name)) {
+			if (Object.prototype.hasOwnProperty.call(gizmoMap, name)) {
 				for (let i = gizmoMap[name].length; i--;) {
 
 					const object = gizmoMap[name][i][0].clone();
