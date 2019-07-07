@@ -123,7 +123,7 @@
 		"react-mic-record": "github:datavized/react-mic-record#hack",
 		"resonance-audio": "^1.0.0",
 		"serialize-error": "^4.1.0",
-		"standardized-audio-context": "^19.1.1",
+		"standardized-audio-context": "^20.1.9",
 		"unistore": "^3.4.1",
 		"vorbis.js": "^0.1.1",
 		"worker-loader": "^2.0.0"
