@@ -46,7 +46,7 @@
 		"copy-webpack-plugin": "^5.0.3",
 		"css-loader": "^2.1.1",
 		"datavized-code-style": "github:datavized/code-style",
-		"dotenv": "^7.0.0",
+		"dotenv": "^8.0.0",
 		"eslint": "^5.16.0",
 		"eslint-config-crockford": "^2.0.0",
 		"eslint-loader": "^2.1.2",
