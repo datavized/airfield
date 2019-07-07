@@ -75,7 +75,7 @@
 		"svgo-loader": "^2.2.1",
 		"temp": "^0.9.0",
 		"typeface-roboto": "0.0.54",
-		"url-loader": "^1.1.2",
+		"url-loader": "^2.0.1",
 		"webp-converter": "^2.2.2",
 		"webpack": "^4.35.2",
 		"webpack-build-notifier": "^1.0.3",
