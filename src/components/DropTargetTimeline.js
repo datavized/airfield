@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dropTarget from 'react-dnd/lib/esm/DropTarget';
+import { DropTarget as dropTarget } from 'react-dnd/dist/esm/decorators/DropTarget';
 import { connect } from 'unistore/src/integrations/react';
 import { actions } from '../store';
 import validateClipChanges from '../util/validateClipChanges';

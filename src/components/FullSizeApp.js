@@ -6,8 +6,8 @@ import { connect } from 'unistore/src/integrations/react';
 import { actions } from '../store';
 import '../engine/live-events';
 import findClip from '../store/findClip';
-import touchBackend from 'react-dnd-touch-backend';
-import { DragDropContext as dragDropContext } from 'react-dnd/lib/esm/DragDropContext';
+import TouchBackend from 'react-dnd-touch-backend';
+import { DndProvider } from 'react-dnd/dist/esm/common/DndProvider';
 
 /*
 Theme/Style stuff
@@ -135,7 +135,7 @@ const Def = class FullSizeApp extends React.Component {
 			</IconButton>
 		</div>;
 
-		return <Shell controls={header}>
+		return <DndProvider backend={TouchBackend} options={{enableMouseEvents: true}}><Shell controls={header}>
 			<div className={classes.container}>
 				{isSpatialize ?
 					<div className={classes.full}>
@@ -180,14 +180,11 @@ const Def = class FullSizeApp extends React.Component {
 				run={!loading && showTour}
 			/>}
 			{!loading && config.showWelcome && <WelcomeDialog onClose={() => setConfig({ showWelcome: false })}/>}
-		</Shell>;
+		</Shell></DndProvider>;
 	}
 };
 
 const FullSizeApp = [
-	dragDropContext(touchBackend({
-		enableMouseEvents: true
-	})),
 	connect(['project', 'config', 'loading'], actions),
 	withStyles(styles)
 ].reduceRight((prev, fn) => fn(prev), Def);

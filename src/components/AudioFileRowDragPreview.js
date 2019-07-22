@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dragLayer from 'react-dnd/lib/esm/DragLayer';
+import { DragLayer as dragLayer } from 'react-dnd/dist/esm/decorators/DragLayer';
 
 /*
 Theme/Style stuff

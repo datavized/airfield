@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dragSource from 'react-dnd/lib/esm/DragSource';
+import { DragSource as dragSource } from 'react-dnd/dist/esm/decorators/DragSource';
 import titleText from '../util/audioFileTitleText';
 
 /*
