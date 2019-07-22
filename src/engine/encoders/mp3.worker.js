@@ -166,7 +166,7 @@ self.addEventListener('message', async event => {
 
 		if (!processRunning) {
 			try {
-				console.log('encoding chunks', task.queuedChunks);
+				// console.log('encoding chunks', task.queuedChunks);
 				const op = writeTaskBuffers(taskId, progress => {
 					// todo: calculate progress somehow or just report how much
 					// processed so far, since we don't know the final duration
@@ -186,7 +186,7 @@ self.addEventListener('message', async event => {
 					});
 				}
 			}
-			console.log('done encoding chunks');
+			// console.log('done encoding chunks');
 		}
 	}
 
