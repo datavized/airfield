@@ -93,6 +93,18 @@ function sortAudioFiles(a, b) {
 	return a < b ? -1 : 1;
 }
 
+/*
+Workaround for react-dropzone bug
+https://github.com/react-dropzone/react-dropzone/issues/853
+*/
+const dropZoneBugWorkaround = (reactDropZoneProps) =>
+	({
+		...reactDropZoneProps,
+		onClick: () => {
+			// do nothing
+		}
+	});
+
 const Def = class AudioLibrary extends React.Component {
 	static propTypes = {
 		classes: PropTypes.object.isRequired,
@@ -275,7 +287,7 @@ const Def = class AudioLibrary extends React.Component {
 				accept={['audio/*', 'x-audio/*']}
 				onDrop={this.onDrop}
 				onDragEnter={null}
-				noClick
+				noClick={false /* temporary bug workaround */}
 				noKeyboard
 				minSize={1}
 				maxSize={/*this.props.maxSize || */Infinity}
@@ -283,7 +295,7 @@ const Def = class AudioLibrary extends React.Component {
 			>
 				{({getRootProps, getInputProps, isDragAccept, isDragReject, open}) =>
 					<div
-						{...getRootProps({})}
+						{...dropZoneBugWorkaround(getRootProps({}))}
 						className={classNames(classes.dropZone, {
 							[classes.dropZoneRejected]: isDragReject,
 							[classes.dropzoneAccepted]: isDragAccept,
