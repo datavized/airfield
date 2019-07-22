@@ -32,7 +32,7 @@ const styles = theme => ({
 			minWidth: 0,
 			alignItems: 'center',
 			height: 38,
-			padding: `2px ${theme.spacing.unit}px`,
+			padding: `2px ${theme.spacing(12)}px`,
 
 			'& > p': {
 				textOverflow: 'ellipsis',
@@ -61,7 +61,7 @@ const styles = theme => ({
 	},
 	colTitle: {
 		'& > p:not(:first-child)': {
-			paddingLeft: theme.spacing.unit
+			paddingLeft: theme.spacing(1)
 		}
 	}
 });

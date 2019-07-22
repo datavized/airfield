@@ -44,11 +44,11 @@ const styles = theme => ({
 	title: {
 		flex: 1,
 		'& > *': {
-			margin: `${theme.spacing.unit * 2}px 0`
+			margin: theme.spacing(2, 0)
 		}
 	},
 	logo: {
-		margin: theme.spacing.unit * 4,
+		margin: theme.spacing(4),
 		alignSelf: 'center',
 		textAlign: 'center',
 		'& img': {

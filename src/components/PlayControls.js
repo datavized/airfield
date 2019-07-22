@@ -8,7 +8,7 @@ import formatTime from '../util/formatTime';
 Material UI components
 */
 import withStyles from '@material-ui/core/styles/withStyles';
-import Slider from '@material-ui/lab/Slider';
+import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import Play from '@material-ui/icons/PlayArrow';
 import Pause from '@material-ui/icons/Pause';
@@ -36,7 +36,7 @@ const styles = theme => ({
 		border: 0
 	},
 	playPauseButton: {
-		margin: theme.spacing.unit
+		margin: theme.spacing(1)
 	},
 	main: {
 		flex: 1,
@@ -63,7 +63,7 @@ const styles = theme => ({
 		color: theme.palette.grey[500]
 	},
 	time: {
-		marginRight: theme.spacing.unit * 3
+		marginRight: theme.spacing(3)
 	}
 });
 

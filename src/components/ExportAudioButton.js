@@ -17,10 +17,10 @@ import Snackbar from '@material-ui/core/Snackbar';
 
 const styles = theme => ({
 	button: {
-		margin: theme.spacing.unit * 2
+		margin: theme.spacing(2)
 	},
 	leftIcon: {
-		marginRight: theme.spacing.unit
+		marginRight: theme.spacing(1)
 	}
 });
 

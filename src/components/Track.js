@@ -28,7 +28,7 @@ const styles = theme => ({
 		height: '100%',
 		top: 0,
 		minWidth: 8,
-		padding: theme.spacing.unit,
+		padding: theme.spacing(1),
 		boxSizing: 'border-box',
 		cursor: 'grab'
 	},

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 Material UI components
 */
 import withTheme from '@material-ui/core/styles/withTheme';
-import { unstable_useMediaQuery as useMediaQuery } from '@material-ui/core/useMediaQuery';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 import UpgradePrompt from './UpgradePrompt';
 import AppLoader from './AppLoader';
@@ -52,6 +52,6 @@ Def.propTypes = {
 };
 
 
-const App = withTheme()(Def);
+const App = withTheme(Def);
 
 export default App;

@@ -17,31 +17,31 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Slider from '@material-ui/lab/Slider';
+import Slider from '@material-ui/core/Slider';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TimeField from './TimeField';
 
 const styles = theme => ({
 	container: {
-		padding: theme.spacing.unit,
+		padding: theme.spacing(1),
 		boxSizing: 'border-box',
 		overflow: 'auto',
 		height: '100%'
 	},
 	formControlLine: {
 		display: 'flex',
-		margin: `${theme.spacing.unit}px 0`
+		margin: theme.spacing(1, 0)
 	},
 	formControlNumeric: {
 		fontVariantNumeric: 'tabular-nums',
-		margin: theme.spacing.unit,
+		margin: theme.spacing(1),
 		'& input': {
 			textAlign: 'right'
 		}
 	},
 	formControl: {
-		margin: theme.spacing.unit,
+		margin: theme.spacing(1),
 		minWidth: 120
 	},
 	slider: {

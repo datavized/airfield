@@ -20,8 +20,8 @@ const styles = theme => ({
 	},
 	icon: {
 		color: theme.palette.error.main,
-		width: theme.spacing.unit * 8,
-		height: theme.spacing.unit * 8
+		width: theme.spacing(8),
+		height: theme.spacing(8)
 	}
 });
 

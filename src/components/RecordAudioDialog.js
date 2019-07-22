@@ -50,14 +50,14 @@ const styles = theme => ({
 		maxWidth: '100%',
 		maxHeight: '100%',
 		'& $title': {
-			paddingTop: theme.spacing.unit,
-			paddingBottom: theme.spacing.unit
+			paddingTop: theme.spacing(1),
+			paddingBottom: theme.spacing(1)
 		}
 	},
 	title: {},
 	formControl: {
 		display: 'flex',
-		margin: theme.spacing.unit,
+		margin: theme.spacing(1),
 		'&:first-child': {
 			marginLeft: 0
 		}
@@ -65,7 +65,7 @@ const styles = theme => ({
 	recordControls: {
 		display: 'flex',
 		flexDirection: 'row',
-		margin: `${theme.spacing.unit}px 0`
+		margin: theme.spacing(1, 0)
 	},
 	recordButtonSection: {
 		minWidth: 120,
@@ -74,7 +74,7 @@ const styles = theme => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 		'& > *': {
-			margin: theme.spacing.unit
+			margin: theme.spacing(1)
 		}
 	},
 	visualizerContainer: {

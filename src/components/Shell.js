@@ -39,7 +39,7 @@ const styles = (theme) => ({
 	},
 	logo: {
 		height: 32,
-		marginRight: theme.spacing.unit
+		marginRight: theme.spacing(1)
 	},
 	appBar: {
 	},

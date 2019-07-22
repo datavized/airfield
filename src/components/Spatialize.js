@@ -49,8 +49,8 @@ const styles = theme => ({
 		position: 'absolute',
 		bottom: 0,
 		right: 0,
-		margin: theme.spacing.unit,
-		marginBottom: Math.max(theme.spacing.unit, 16)
+		margin: theme.spacing(1),
+		marginBottom: Math.max(theme.spacing(1), 16)
 	},
 	zoomSlider: {
 		width: 200

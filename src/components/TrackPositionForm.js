@@ -13,11 +13,11 @@ const styles = theme => ({
 	root: {
 		display: 'flex',
 		flexDirection: 'row',
-		marginTop: theme.spacing.unit
+		marginTop: theme.spacing(1)
 	},
 	input: {
 		fontVariantNumeric: 'tabular-nums',
-		marginTop: theme.spacing.unit * 2,
+		marginTop: theme.spacing(2),
 		width: 66,
 		'& > input': {
 			textAlign: 'right'

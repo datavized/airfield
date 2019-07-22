@@ -47,7 +47,7 @@ const styles = theme => ({
 	paper: {
 		maxWidth: 400
 		// overflow: 'auto'//,
-		// padding: theme.spacing.unit,
+		// padding: theme.spacing(1),
 		// fontSize: '0.8em'
 	}
 });

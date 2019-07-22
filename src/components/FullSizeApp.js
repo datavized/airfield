@@ -85,7 +85,7 @@ const styles = theme => ({
 		overflow: 'hidden'
 	},
 	screenButton: {
-		margin: theme.spacing.unit * 2
+		margin: theme.spacing(2)
 	}
 });
 
@@ -113,7 +113,7 @@ const Def = class FullSizeApp extends React.Component {
 
 	render() {
 		const {
-			classes,
+			classes = {},
 			project,
 			loading,
 			config,
@@ -175,7 +175,7 @@ const Def = class FullSizeApp extends React.Component {
 					</PlayControls>
 				</Paper>
 			</div>
-			<AudioFileRowDragPreview/>
+			{/*<AudioFileRowDragPreview/>*/}
 			{showTour && !config.showWelcome && <Tour
 				run={!loading && showTour}
 			/>}

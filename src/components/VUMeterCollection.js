@@ -12,7 +12,7 @@ const styles = theme => ({
 	},
 	meter: {
 		flex: 1,
-		margin: [[0, theme.spacing.unit]]
+		margin: theme.spacing(0, 1)
 	}
 });
 const Def = ({channels = 2, classes}) =>

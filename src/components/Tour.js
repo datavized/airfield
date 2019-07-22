@@ -211,16 +211,16 @@ const Def = class Tour extends React.Component {
 				zIndex: 9000 // need to be in front of dialogs
 			},
 			tooltip: {
-				padding: theme.spacing.unit * 2.5
+				padding: theme.spacing(2.5)
 			},
 			tooltipContainer: {
 				textAlign: 'left'
 			},
 			tooltipContent: {
-				padding: `${theme.spacing.unit}px 0`
+				padding: theme.spacing(1, 0)
 			},
 			buttonClose: {
-				padding: theme.spacing.unit * 2.5
+				padding: theme.spacing(2.5)
 			},
 			buttonSkip: {
 				paddingLeft: 0

@@ -22,7 +22,7 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
-import Slider from '@material-ui/lab/Slider';
+import Slider from '@material-ui/core/Slider';
 import ConfirmationDialog from './ConfirmationDialog';
 import InPlaceInput from './InPlaceInput';
 import ContextMenu from './ContextMenu';
@@ -37,10 +37,10 @@ import AutoIcon from 'mdi-material-ui/AutoFix';
 
 const styles = theme => ({
 	container: {
-		padding: theme.spacing.unit,
+		padding: theme.spacing(1),
 		paddingTop: 0, // icon button give us plenty of padding
-		// padding: [[0, theme.spacing.unit, theme.spacing.unit, 0]],
-		// marginLeft: theme.spacing.unit,
+		// padding: [[0, theme.spacing(1), theme.spacing(1), 0]],
+		// marginLeft: theme.spacing(1),
 		display: 'flex',
 		position: 'relative',
 		flexBasis: 200,
@@ -54,14 +54,14 @@ const styles = theme => ({
 		display: 'flex',
 		flexDirection: 'row',
 		alignItems: 'center',
-		marginRight: -theme.spacing.unit // account for icon padding
+		marginRight: -theme.spacing(1) // account for icon padding
 	},
 	colorColumn: {
 		position: 'absolute',
 		left: 0,
 		top: 1,
 		height: '100%',
-		width: theme.spacing.unit / 2
+		width: theme.spacing(0.5)
 	},
 	nameEditor: {
 		...theme.typography.body1,
@@ -80,7 +80,7 @@ const styles = theme => ({
 	slider: {
 		width: 300,
 		// display: 'inline-block',
-		padding: [[22, theme.spacing.unit * 2]]
+		padding: [[22, theme.spacing(2)]]
 	},
 	button: {
 		color: theme.palette.text.primary

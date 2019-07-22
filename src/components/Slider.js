@@ -40,7 +40,7 @@ const styles = theme => ({
 				// }
 			}
 		},
-		// padding: `0 ${theme.spacing.unit * 2}px`
+		// padding: theme.spacing(0, 2)
 		'& .rc-slider-disabled': {
 			backgroundColor: 'transparent',
 

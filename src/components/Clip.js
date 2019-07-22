@@ -33,7 +33,7 @@ const styles = theme => ({
 		height: TRACK_HEIGHT,
 		top: 0,
 		minWidth: 8,
-		padding: [[theme.spacing.unit, 0]],
+		padding: theme.spacing(1, 0),
 		boxSizing: 'border-box',
 		cursor: 'grab'
 	},
@@ -42,7 +42,7 @@ const styles = theme => ({
 		display: 'flex',
 		alignItems: 'center',
 		overflow: 'hidden',
-		padding: [[0, theme.spacing.unit]]
+		padding: theme.spacing(0, 1)
 	},
 	clipName: {
 		overflow: 'hidden',

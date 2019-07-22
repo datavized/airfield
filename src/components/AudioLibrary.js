@@ -70,14 +70,14 @@ const styles = theme => ({
 		justifyContent: 'flex-end',
 		backgroundColor: theme.palette.background.paper,
 		'& > button': {
-			margin: theme.spacing.unit
+			margin: theme.spacing(1)
 		},
 		'$compact &': {
 			paddingBottom: 6
 		}
 	},
 	rightIcon: {
-		marginLeft: theme.spacing.unit
+		marginLeft: theme.spacing(1)
 	},
 	em: {
 		color: theme.palette.text.primary
@@ -303,7 +303,7 @@ const Def = class AudioLibrary extends React.Component {
 						})}
 					>
 						<div className={classes.tableContainer}>
-							<Table className={classes.table} padding="dense">
+							<Table className={classes.table} size="small">
 								{/*<TableHead className={classNames(classes.tableSection, classes.tableHead)}>
 									<TableRow className={classes.tr}>
 										<TableCell className={classes.colTitle}><Typography>Name</Typography></TableCell>

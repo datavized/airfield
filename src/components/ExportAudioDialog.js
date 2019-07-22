@@ -34,7 +34,7 @@ const styles = theme => ({
 		maxHeight: '80%'
 	},
 	formControl: {
-		margin: theme.spacing.unit,
+		margin: theme.spacing(1),
 		'&:first-child': {
 			marginLeft: 0
 		}
