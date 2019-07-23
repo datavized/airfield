@@ -51,7 +51,7 @@ const Def = class UpgradePrompt extends React.Component {
 			}}
 			message={<span id="app-upgrade-message">{APP_TITLE} has upgraded. Reload for the latest version.</span>}
 			action={[
-				<Button key="undo" color="secondary" size="small" onClick={this.onReload}>
+				<Button key="undo" color="primary" size="small" onClick={this.onReload}>
 					Reload
 				</Button>
 			]}
