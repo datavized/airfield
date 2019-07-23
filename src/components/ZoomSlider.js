@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import classNames from 'classnames';
 
-import Slider from '@material-ui/lab/Slider';
+import Slider from './ColorSlider';
 import IconButton from './IconButton';
 import ZoomOut from '@material-ui/icons/ZoomOut';
 import ZoomIn from '@material-ui/icons/ZoomIn';
@@ -36,6 +36,7 @@ const Def = ({classes, className, min, max, increment, value, ...props}) => {
 		</IconButton>
 		<Slider
 			{...props}
+			color="secondary"
 			step={step}
 			min={min}
 			max={max}

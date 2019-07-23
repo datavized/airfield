@@ -17,7 +17,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Slider from '@material-ui/lab/Slider';
+import Slider from './ColorSlider';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TimeField from './TimeField';
@@ -132,7 +132,7 @@ const Def = class ClipEditForm extends React.Component {
 					<Checkbox
 						checked={enabled !== false}
 						onChange={this.handleChangeProperty('enabled')}
-						color="primary"
+						color="secondary"
 					/>
 				}
 				label="Enabled"
@@ -141,6 +141,7 @@ const Def = class ClipEditForm extends React.Component {
 				<InputLabel htmlFor="clip-volume" shrink={true}>Volume</InputLabel>
 				<div className={classes.volumeControl}>
 					<Slider
+						color="secondary"
 						className={classes.slider}
 						min={0}
 						max={1}

@@ -22,7 +22,7 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Typography from '@material-ui/core/Typography';
 import Tooltip from '@material-ui/core/Tooltip';
-import Slider from '@material-ui/lab/Slider';
+import Slider from './ColorSlider';
 import ConfirmationDialog from './ConfirmationDialog';
 import InPlaceInput from './InPlaceInput';
 import ContextMenu from './ContextMenu';
@@ -290,6 +290,7 @@ const Def = class TrackHeader extends React.Component {
 					icon={<VolumeUpIcon/>}
 				>
 					<Slider
+						color="secondary"
 						className={classes.slider}
 						min={0}
 						max={1}

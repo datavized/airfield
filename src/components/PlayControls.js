@@ -8,7 +8,7 @@ import formatTime from '../util/formatTime';
 Material UI components
 */
 import withStyles from '@material-ui/core/styles/withStyles';
-import Slider from '@material-ui/lab/Slider';
+import Slider from './ColorSlider';
 import Typography from '@material-ui/core/Typography';
 import Play from '@material-ui/icons/PlayArrow';
 import Pause from '@material-ui/icons/Pause';
@@ -137,6 +137,7 @@ const Def = class PlayControls extends React.Component {
 			<h2 id="player-a11y-header" className={classes.offscreen}>Player controls</h2>
 			<div className={classes.progress}>
 				<Slider
+					color="secondary"
 					className={classes.progressSlider}
 					min={0}
 					max={duration || 1}
