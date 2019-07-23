@@ -47,7 +47,8 @@ const styles = theme => ({
 		overflow: 'hidden',
 		background: `linear-gradient(${theme.palette.divider} 1px, transparent 1px) 0% 0% / ${TRACK_HEIGHT}px ${TRACK_HEIGHT}px repeat`,
 		backgroundPositionY: 32,
-		backgroundAttachment: 'local'
+		backgroundAttachment: 'local',
+		userSelect: 'none'
 	},
 	trackHeader: {
 		height: TRACK_HEIGHT
