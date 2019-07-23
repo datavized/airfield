@@ -25,8 +25,11 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import PopperControl from './PopperControl';
+import Typography from '@material-ui/core/Typography';
 
 import DriveIcon from 'mdi-material-ui/GoogleDrive';
+import HelpIcon from '@material-ui/icons/Help';
 
 const styles = theme => ({
 	dialog: {
@@ -43,6 +46,12 @@ const styles = theme => ({
 	},
 	buttonIcon: {
 		marginLeft: theme.spacing.unit
+	},
+	googleHelp: {
+		padding: theme.spacing.unit,
+		'& a': {
+			color: theme.palette.text.primary
+		}
 	}
 });
 
@@ -113,6 +122,22 @@ const dateFormat = new Intl.DateTimeFormat(navigator.languages, {
 });
 const autoFileName = () => 'Exported Audio ' + dateFormat.format(new Date());
 
+const googleHelpLinks = [
+	{
+		regex: /Firefox\//,
+		url: 'https://support.mozilla.org/en-US/kb/content-blocking#w_turn-content-blocking-off-on-individual-sites'
+	},
+	{
+		regex: /Chrome\//,
+		url: 'chrome://settings/content/cookies'
+	}
+];
+const googleHelpLink = () => {
+	const match = googleHelpLinks.find(({regex}) => regex.test(navigator.userAgent));
+	return match && match.url ||
+		'https://medium.com/@akohubteam/how-to-enable-third-party-cookies-on-your-browsers-f9a8143b8cc5';
+};
+
 const Def = class ExportAudioDialog extends React.Component {
 	static propTypes = {
 		classes: PropTypes.object,
@@ -131,7 +156,8 @@ const Def = class ExportAudioDialog extends React.Component {
 		channelMode: DEFAULT_CHANNEL_MODE,
 		error: '',
 		googleAuth: false,
-		googleEnabled: false
+		googleEnabled: false,
+		googleError: false
 	}
 
 	playBlockClaim = Symbol()
@@ -298,10 +324,12 @@ const Def = class ExportAudioDialog extends React.Component {
 					authInstance.currentUser.listen(this.updateGoogleAuthStatus);
 					this.setState({
 						googleAuth: authInstance.currentUser.get(),
-						googleEnabled: true
+						googleEnabled: true,
+						googleError: false
 					});
 				}).catch(err => {
 					console.warn('Error loading google API', err);
+					this.setState({ googleError: true });
 				});
 			});
 		});
@@ -325,7 +353,8 @@ const Def = class ExportAudioDialog extends React.Component {
 			format,
 			bitRate,
 			googleAuth,
-			googleEnabled
+			googleEnabled,
+			googleError
 		} = this.state;
 
 		const {
@@ -400,12 +429,21 @@ const Def = class ExportAudioDialog extends React.Component {
 						</Select>
 					</FormControl>
 				</div>
-				<Button onClick={googleIsSignedIn ? this.signoutGoogle : this.authorizeGoogle} color="secondary" variant="contained" disabled={!googleEnabled}>
-					{ googleIsSignedIn ?
-						`Sign out Drive (${googleAuth.getBasicProfile().getEmail()})` :
-						'Sign in to Drive'
-					} <DriveIcon className={classes.buttonIcon}/>
-				</Button>
+				<div>
+					<Button onClick={googleIsSignedIn ? this.signoutGoogle : this.authorizeGoogle} color="secondary" variant="contained" disabled={!googleEnabled}>
+						{ googleIsSignedIn ?
+							`Sign out Drive (${googleAuth.getBasicProfile().getEmail()})` :
+							'Sign in to Drive'
+						} <DriveIcon className={classes.buttonIcon}/>
+					</Button>
+					{googleError ?
+						<PopperControl icon={<HelpIcon color="secondary"/>}>
+							<Typography className={classes.googleHelp}>Cannot access Google Drive
+							while  <a href="https://developers.google.com/identity/sign-in/web/troubleshooting#third-party_cookies_and_data_blocked" target="_blank" rel="noopener noreferrer">third-part cookies and data</a> are
+								blocked. <a href={googleHelpLink()} target="_blank" rel="noopener noreferrer">Turn off content
+							blocking</a> to proceed.</Typography>
+						</PopperControl> : null}
+				</div>
 			</div>;
 
 		return <Dialog
