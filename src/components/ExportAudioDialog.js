@@ -26,6 +26,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
+import DriveIcon from 'mdi-material-ui/GoogleDrive';
+
 const styles = theme => ({
 	dialog: {
 		minWidth: '50%',
@@ -38,6 +40,9 @@ const styles = theme => ({
 		'&:first-child': {
 			marginLeft: 0
 		}
+	},
+	buttonIcon: {
+		marginLeft: theme.spacing.unit
 	}
 });
 
@@ -295,6 +300,8 @@ const Def = class ExportAudioDialog extends React.Component {
 						googleAuth: authInstance.currentUser.get(),
 						googleEnabled: true
 					});
+				}).catch(err => {
+					console.warn('Error loading google API', err);
 				});
 			});
 		});
@@ -395,9 +402,9 @@ const Def = class ExportAudioDialog extends React.Component {
 				</div>
 				<Button onClick={googleIsSignedIn ? this.signoutGoogle : this.authorizeGoogle} color="secondary" variant="contained" disabled={!googleEnabled}>
 					{ googleIsSignedIn ?
-						`Sign out GDrive (${googleAuth.getBasicProfile().getEmail()})` :
-						'Sign in to GDrive'
-					}
+						`Sign out Drive (${googleAuth.getBasicProfile().getEmail()})` :
+						'Sign in to Drive'
+					} <DriveIcon className={classes.buttonIcon}/>
 				</Button>
 			</div>;
 
@@ -424,7 +431,7 @@ const Def = class ExportAudioDialog extends React.Component {
 					Export
 				</Button>}
 				{<Button onClick={() => this.exportAudio(this.upload)} color="secondary" autoFocus disabled={exporting || !googleIsSignedIn}>
-					Export to GDrive
+					Export to Drive <DriveIcon className={classes.buttonIcon}/>
 				</Button>}
 			</DialogActions>
 		</Dialog>;
