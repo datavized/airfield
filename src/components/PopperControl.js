@@ -113,6 +113,7 @@ const Def = class PopperControl extends React.Component {
 			children,
 			placement,
 			disabled,
+			icon,
 			...iconButtonProps
 		} = this.props;
 
@@ -121,10 +122,10 @@ const Def = class PopperControl extends React.Component {
 			arrowRef
 		} = this.state;
 
-		const Icon = this.props.icon;
-		const icon = typeof Icon === 'function' ?
+		const Icon = icon;
+		const iconComponent = typeof Icon === 'function' ?
 			<Icon className={classes.icon} ref={this.anchorRef}/> :
-			<span className={classes.icon} ref={this.anchorRef}>{this.props.icon}</span>;
+			<span className={classes.icon} ref={this.anchorRef}>{icon}</span>;
 
 		return <ClickAwayListener onClickAway={this.onClose} mouseEvent="onClick">
 			<span ref={this.anchorRef}>
@@ -134,7 +135,7 @@ const Def = class PopperControl extends React.Component {
 					{...iconButtonProps}
 					onClick={this.onClick}
 				>
-					{icon}
+					{iconComponent}
 				</IconButton>
 				<Popper
 					placement={placement || 'top'}
